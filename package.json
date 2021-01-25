@@ -9,8 +9,7 @@
     "start:dev": "ts-node-dev 'src/index.ts'",
     "lint": "eslint ./src ./test --ext .ts",
     "lint:fix": "eslint ./src ./test --ext .ts --fix",
-    "test": "",
-    "test:functional": "jest --projects ./test"
+    "test": "jest --projects ./test"
   },
   "repository": {
     "type": "git",
