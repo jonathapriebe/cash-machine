@@ -28,4 +28,15 @@ describe('Cash withdrawal tests', () => {
     expect(status).toBe(200);
     expect(body).toEqual(expectedResponse);
   });
+
+  it('Should generate error with non numeric value', async () => {
+    const expectedResponse = {
+      "message": "request.body.value should be number",
+      "code": 400,
+      "error": "Bad Request"
+    };
+    const { body, status } = await global.testRequest.post('/draw').send({ value: "test" });
+    expect(status).toBe(400);
+    expect(body).toEqual(expectedResponse);
+  });
 });
